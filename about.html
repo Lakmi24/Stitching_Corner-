@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stitching Corner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Font Awesome for Facebook icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffaf5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #5a3e36;
+    }
+
+    header {
+      background-color: #d97757;
+      color: white;
+      padding: 10px 15px; 
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Two-column layout */
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 30px;
+      align-items: stretch; /* stretch columns to same height */
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 300px;
+      display: flex;       /* make flex container */
+      flex-direction: column;
+    }
+
+    .about {
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+      flex: 1;             /* take remaining height */
+    }
+
+    .about h1 {
+      color: #b5651d;
+      margin-top: 10px;
+    }
+
+    /* Image fills right column height */
+    .right img {
+      width: 100%;
+      height: 70%;        /* fill the column height */
+      object-fit: cover;   /* crop without distortion */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: block;
+    }
+
+    /* Facebook contact section */
+    .facebook-contact {
+  position: fixed;       /* stays visible on screen */
+  bottom: 0;             /* stick to bottom */
+  left: 0;
+  width: 100%;           /* full width */
+  background-color: #f3d0af;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;         /* above other content */
+}
+
+.facebook-contact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1877f2;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.facebook-contact a:hover {
+  background-color: #0d5bd8;
+}
+
+.facebook-contact i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div style="display: flex; justify-content: flex-end;">
+        <a href="index.html">Home</a> 
+    </div>  
+  </header>
+
+  <section class="two-column">
+    <div class="left">
+      <section class="about">
+        <h1>About Stitching Corner</h1>
+        <p>
+          Welcome to <strong>Stitching Corner</strong> — your home for beautifully handcrafted embroidery and customized hoop art!  
+          We create unique, made-to-order gifts that capture your special memories through detailed stitching and thoughtful design.  
+        </p>
+
+        <p>
+          Our products are available in <strong>three sizes</strong> — 10 inches, 12 inches, and 14 inches — priced at 
+          <strong>€75, €100, and €120</strong> respectively. Each hoop is carefully designed using premium-quality 
+          <strong>linens, cotton fabrics, and colorful embroidery threads</strong> to ensure durability and beauty in every piece.
+        </p>
+
+        <p>
+          At Stitching Corner, we believe every gift should be as special as the person receiving it. That’s why we offer 
+          <strong>customized designs</strong> that can include your favorite <strong>photos, calendars, quotes, and patterns</strong> 
+          — all stitched to perfection according to your preferences.
+        </p>
+
+        <p>
+          Whether you’re celebrating an <strong>anniversary, birthday, or any meaningful occasion</strong>, our handmade hoops are 
+          designed to make your moments unforgettable. We also provide <strong>island-wide delivery</strong>, so your thoughtful gift 
+          can reach your loved ones no matter where they are.
+        </p>
+
+        <p>
+          Thank you for choosing Stitching Corner — where creativity and craftsmanship come together to make your day more meaningful.
+        </p>
+      </section>      
+    </div>
+
+    <div class="right">
+      <img src="pictures/pic1.jpg" alt="Stitching Corner">
+    </div>
+  </section>
+
+  <!-- Facebook Contact Section -->
+  <section class="facebook-contact">
+    <p>Connect with us on Facebook for updates, new designs, and special offers!</p>
+    <a href="https://www.facebook.com/STITCHINGCORNER.LK/" target="_blank">
+      <i class="fab fa-facebook-f"></i> Visit Our Facebook Page
+    </a>
+  </section>
+</body>
+</html>

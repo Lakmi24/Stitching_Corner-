@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stitching Corner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffaf5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header {
+      background-color: #d97757;
+      color: white;
+      padding: 20px;
+    }
+
+    .notes {
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .carousel {
+  position: relative;
+  width: 90%;              /* 90% of the screen width */
+  max-width: 1000px;       /* limit max width for large screens */
+  aspect-ratio: 16 / 9;    /* automatically keeps a nice rectangle shape */
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.slides img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;        /* keeps image proportions and crops nicely */
+  display: none;
+  border-radius: 10px;
+}
+
+    .slides img.active {
+      display: block;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+      
+  <header class="header">  
+    <div style="display: flex; justify-content: flex-end;">
+        <a href="Categories.html">Categories</a> 
+    </div>    
+      <h1>New Releases</h1> 
+      <p class="notes">Welcome to Our Unique Handmade Gifts For Your Loved Ones</p>
+  </header>
+  <section class="carousel">
+    <div class="slides">
+      <img src="pictures/NewReleases/" alt="Slide 1" class="active">
+      <img src="pictures/NewReleases/" alt="Slide 2">
+      <img src="pictures/NewReleases/" alt="Slide 3">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </section>
+
+  <script>
+    const slides = document.querySelectorAll('.slides img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === i);
+      });
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : slides.length - 1;
+      showSlide(index);
+    });
+
+    next.addEventListener('click', () => {
+      index = (index < slides.length - 1) ? index + 1 : 0;
+      showSlide(index);
+    });
+  </script>
+</body>
+</html>

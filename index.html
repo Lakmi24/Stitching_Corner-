@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stitching Corner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel .slides img');
+    const prev = document.querySelector('.carousel .prev');
+    const next = document.querySelector('.carousel .next');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      index = (i + slides.length) % slides.length; // loop around
+      slides[index].classList.add('active');
+    }
+
+    // Auto-play every 3 seconds
+    setInterval(() => {
+      showSlide(index + 1);
+    }, 3000);
+
+    // Optional: buttons
+    prev.addEventListener('click', () => showSlide(index - 1));
+    next.addEventListener('click', () => showSlide(index + 1));
+  });
+  </script>
+</body>
+</head>
+
+<body>
+  <header class="header">
+    <div>
+      <div class="headerText">Stitching Corner</div> 
+      <p class="notes">Welcome to Our Unique Handmade Gifts For Your Loved Ones</p>
+    </div>
+  </header>
+
+  <div class="navbar">
+    <div class="menu">
+      <a class="cn" href="contact.html">BOOK NOW</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Categories.html">Categories</a></li>
+        <li><a href="makeanorder.html">Make an Order</a></li>
+        <li><a href="about.html">About & Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="two-column">
+    <div class="left">
+      <div>
+        <h2 style="text-align: center;">Unique Handmade Gifts</h2>
+        <section class="about">
+          <h3>Welcome to Stitching Corner</h3>
+          <p>
+            At <strong>Stitching Corner</strong>, we specialize in creating customized and unique handmade gifts 
+            that bring warmth and joy to your loved ones. Each piece is designed with care using quality fabrics, linens, 
+            and colorful threads — perfect for birthdays, anniversaries, or any special moment.  
+            Here, you can explore a variety of beautifully stitched products, from elegant hoops to personalized embroidery art, 
+            all crafted to make your day more meaningful.
+          </p>
+        </section>
+        <h3>Newly Released</h3>
+        <div class="carousel-container">
+          <section class="carousel">
+            <div class="slides">
+              <img src="pictures/pic7.jpg" alt="Slide 1" class="active">
+              <img src="pictures/pic3.jpg" alt="Slide 2">
+              <img src="pictures/pic2.jpg" alt="Slide 3">
+              <img src="pictures/pic4.jpg" alt="Slide 4">
+              <img src="pictures/pic5.jpg" alt="Slide 5">
+              <img src="pictures/pic6.jpg" alt="Slide 6">
+            </div>
+
+            <!-- Optional navigation buttons -->
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+          </section>             
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <img src="pictures/embr.jpg" alt="Stitching Corner">
+    </div>
+  </section>
+</body>
+</html>
